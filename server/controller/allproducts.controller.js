@@ -1,19 +1,8 @@
-const e = require("express");
 const express = require("express");
 const { ProductModel } = require("../model/allProducts.model");
 const app = express();
 const productRouter = express.Router();
 app.use(express.json());
-
-// productRouter.get("/", async (req, res) => {
-//   try {
-//     const item = await ProductModel.find();
-
-//     return res.status(201).send(item);
-//   } catch (e) {
-//     return res.status(500).json({ message: e.message, status: "Failed" });
-//   }
-// });
 
 productRouter.get("/:id", async (req, res) => {
   try {
@@ -44,6 +33,18 @@ productRouter.get("/", async (req, res) => {
     }
   } catch (e) {
     return res.status(500).json({ message: e.message, status: "Failed" });
+  }
+});
+
+productRouter.post("/add", async (req, res) => {
+  try {
+    const data = new ProductModel(req.body);
+    data.save();
+    res.status
+      .send(201)
+      .json({ message: "Data added successfully", status: "success" });
+  } catch (error) {
+    return res.status(500).json({ message: error.message, status: "Failed" });
   }
 });
 
