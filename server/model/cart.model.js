@@ -21,6 +21,10 @@ const cartSchema = mongoose.Schema({
       prices: reqArray,
     },
   ],
+  user: {
+    name: reqString,
+    email: reqString,
+  },
 });
 /**
 name="Asus VIVOBOOK 15 K513EA"
