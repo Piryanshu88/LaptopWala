@@ -9,6 +9,8 @@ const userSchema = mongoose.Schema({
   password: reqString,
 });
 
+
+
 const UserModel = mongoose.model("user", userSchema);
 
 module.exports = {

@@ -20,7 +20,7 @@ data=Object
 images =Array
 prices=Array
  */
-const ProductModel = mongoose.model("user", allProductsSchema);
+const ProductModel = mongoose.model("laptop", allProductsSchema);
 
 module.exports = {
   ProductModel,

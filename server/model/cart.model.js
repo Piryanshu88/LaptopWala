@@ -30,7 +30,7 @@ data=Object
 images =Array
 prices=Array
  */
-const CartModel = mongoose.model("user", cartSchema);
+const CartModel = mongoose.model("cart", cartSchema);
 
 module.exports = {
   CartModel,
