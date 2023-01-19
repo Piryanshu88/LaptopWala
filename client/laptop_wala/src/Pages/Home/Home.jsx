@@ -1,5 +1,10 @@
 import React from "react";
 import { styles } from "./Home.Module.css";
-export const Home = () => {
-  return <div>Home</div>;
+import { Home } from "../../Components/Home/Home";
+export const Homes = () => {
+  return (
+    <div>
+      <Home />
+    </div>
+  );
 };

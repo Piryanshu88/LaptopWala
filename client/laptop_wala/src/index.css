@@ -10,6 +10,9 @@
 }
 :root {
   --transition: all 400ms ease;
+  --primary-btn-color:#0672cb;
+  --primary-btn-hover:#fff;
+  --secondary-btn-hover:
 }
 
 html {
