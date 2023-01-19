@@ -1,8 +1,9 @@
 import styles from "./Navbar.module.css";
 import React from "react";
-import website_logo from "../../assets/website_logo.gif";
+import website_logo from "../../assets/wlogo1.png";
 import {
   Button,
+  Image,
   Input,
   InputGroup,
   InputRightElement,
@@ -104,15 +105,18 @@ export const Navbar = () => {
     <div className={styles.navbar_container}>
       <div className={styles.navbar_sec_1}>
         <div>
-          <img src={website_logo} alt="website_logo" width={"20%"} />
+          <Image
+            src={website_logo}
+            alt="website_logo"
+            width={{ sm: "50%", md: "70%", lg: "36%" }}
+          />
         </div>
         <div>
           <InputGroup>
             <Input
               placeholder="Search here..."
               borderRadius={"0"}
-              className={styles.input}
-              width={{ sm: " 250px", md: "300px" }}
+              width={{ sm: "150px", md: "300px", lg: "" }}
             />
             <InputRightElement children={<SearchIcon />} />
           </InputGroup>

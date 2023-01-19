@@ -1,5 +1,5 @@
 .navbar_container {
-  border: 1px solid red;
+  border-bottom: 1px solid #979191;
 }
 .navbar_sec_1 {
   display: flex;
@@ -39,6 +39,23 @@
 @media all and (min-width: 728px) and (max-width: 1250px) {
   .navbar_heading2,
   .navbar_heading1 {
+    display: none;
+  }
+  .navbar_container {
+    margin-top: 10px;
+  }
+}
+
+@media all and (min-width: 338px) and (max-width: 728px) {
+  .navbar_heading2,
+  .navbar_heading1 {
+    display: none;
+  }
+  .navbar_container {
+    margin-top: 10px;
+    
+  }
+  .navbar_sec_2 {
     display: none;
   }
 }
