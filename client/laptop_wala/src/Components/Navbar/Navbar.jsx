@@ -28,6 +28,7 @@ import {
 import { BsFillCircleFill } from "react-icons/bs";
 import { ChevronUpIcon, ChevronDownIcon, SearchIcon } from "@chakra-ui/icons";
 import { NavbarSec } from "./Navbar_Sec";
+import { Link } from "react-router-dom";
 
 const apex = [
   "View All APEX",
@@ -200,8 +201,12 @@ export const Navbar = () => {
                     View order and track easily
                   </ListItem>
                 </UnorderedList>
-                <Button>Sign In</Button>
-                <Button>Create An Account</Button>
+                <Button>
+                  <Link to="/signin">Sign In</Link>
+                </Button>
+                <Button>
+                  <Link to="/login">Create An Account</Link>
+                </Button>
                 <Button>Premier Sign In</Button>
                 <Button>Partner Premier Sign In</Button>
               </div>
