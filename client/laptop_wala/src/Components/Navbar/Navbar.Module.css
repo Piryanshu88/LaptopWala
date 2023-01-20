@@ -1,8 +1,6 @@
 .navbar_container {
   border-bottom: 1px solid #979191;
   margin-top: 10px;
-  position: sticky;
-  z-index: 1000;
 }
 .navbar_sec_1 {
   display: flex;
@@ -38,7 +36,9 @@
 .signup:hover {
   background-color: #fff;
 }
-
+.mobile_navbar {
+  display: none;
+}
 @media all and (min-width: 728px) and (max-width: 1250px) {
   .navbar_heading2,
   .navbar_heading1 {
@@ -56,9 +56,28 @@
   }
   .navbar_container {
     margin-top: 10px;
-    
   }
   .navbar_sec_2 {
     display: none;
+  }
+  .navbar_heading > div:nth-child(2),
+  .navbar_heading3 > div:nth-child(2) {
+    display: none;
+  }
+  .navbar_heading,
+  .navbar_heading3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    font-weight: 500;
+    padding: 0;
+  }
+  .searchbar {
+    display: none;
+  }
+  .mobile_navbar {
+    display: flex;
+    margin: 10px 9px;
   }
 }

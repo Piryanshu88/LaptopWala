@@ -108,15 +108,15 @@ export const Navbar = () => {
           <Image
             src={website_logo}
             alt="website_logo"
-            width={{ sm: "50%", md: "70%", lg: "36%" }}
+            width={{ sm: "100%", md: "70%", lg: "36%" }}
           />
         </div>
-        <div>
+        <div className={styles.searchbar}>
           <InputGroup>
             <Input
               placeholder="Search here..."
               borderRadius={"0"}
-              width={{ sm: "150px", md: "300px", lg: "" }}
+              width={{ sm: "", md: "300px", lg: "" }}
             />
             <InputRightElement children={<SearchIcon />} />
           </InputGroup>
@@ -178,6 +178,12 @@ export const Navbar = () => {
             <div>Cart</div>
           </div>
         </div>
+      </div>
+      <div className={styles.mobile_navbar}>
+        <InputGroup>
+          <Input placeholder="Search here..." borderRadius={"0"} />
+          <InputRightElement children={<SearchIcon />} />
+        </InputGroup>
       </div>
       <div className={styles.navbar_sec_2}>
         <NavbarSec comp="APEX" list={apex} />
