@@ -1,5 +1,8 @@
 .navbar_container {
   border-bottom: 1px solid #979191;
+  margin-top: 10px;
+  position: sticky;
+  z-index: 1000;
 }
 .navbar_sec_1 {
   display: flex;

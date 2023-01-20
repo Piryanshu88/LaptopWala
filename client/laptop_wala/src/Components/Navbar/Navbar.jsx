@@ -146,8 +146,12 @@ export const Navbar = () => {
                   width={"280px"}
                   background="var(--primary-btn-color)"
                   color={"#fff"}
-                  borderRadius="0
-                "
+                  borderRadius="0"
+                  _hover={{
+                    border: "1px solid var(--primary-btn-color)",
+                    color: "var(--primary-btn-color)",
+                    bg: "#fff",
+                  }}
                 >
                   Sign In
                 </Button>
@@ -159,7 +163,7 @@ export const Navbar = () => {
             <div>
               <MdOutlineSupportAgent fontSize={"20px"} />
             </div>
-            <div>Contact Us</div>
+            <div>Contact </div>
           </div>
           <div className={styles.navbar_heading2}>
             <div>

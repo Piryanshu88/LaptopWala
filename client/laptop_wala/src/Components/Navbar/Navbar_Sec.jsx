@@ -19,7 +19,7 @@ export const NavbarSec = ({ comp, list }) => {
         py={[1, 2, 2]}
         px={4}
         borderRadius={1}
-        _hover={{ bg: useColorModeValue("gray.100", "gray.700") }}
+        _hover={{ bg: useColorModeValue("gray.100", "gray.700"),borderBottom:"2px solid #444" }}
         aria-label="Courses"
         fontWeight="normal"
         onMouseEnter={onOpen}

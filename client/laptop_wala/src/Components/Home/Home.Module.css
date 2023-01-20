@@ -1,0 +1,10 @@
+.home_btn > button:nth-child(1) {
+}
+.home_box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.home_box > div {
+  border: 1px solid teal;
+}
