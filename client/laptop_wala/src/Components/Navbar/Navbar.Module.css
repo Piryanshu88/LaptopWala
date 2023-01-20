@@ -1,6 +1,7 @@
 .navbar_container {
   border-bottom: 1px solid #979191;
   margin-top: 10px;
+  position: relative;
 }
 .navbar_sec_1 {
   display: flex;

@@ -3,12 +3,151 @@ import React from "react";
 import { Button, Text } from "@chakra-ui/react";
 import laptop1 from "../../assets/Screenshot_20230120_052234.png";
 import { BiSupport } from "react-icons/bi";
-import { BsPatchCheck } from "react-icons/bs";
+import { BsPatchCheck, BsLaptop, BsHeadphones } from "react-icons/bs";
 import { HiOutlineChatBubbleLeftRight } from "react-icons/hi2";
 import { FiSettings } from "react-icons/fi";
+import { AiOutlineDesktop } from "react-icons/ai";
+import { RiAliensFill } from "react-icons/ri";
+import { IoDesktopOutline } from "react-icons/io5";
+
 export const Home = () => {
   return (
     <div className={styles.home_container}>
+      <div className={styles.categories}>
+        <div>
+          <div>
+            <AiOutlineDesktop />
+          </div>
+          <div>Desktops</div>
+          <div style={{ textAlign: "center" }}>
+            <Text
+              fontWeight={"400"}
+              fontSize="17px"
+              color="var(--primary-btn-color)"
+            >
+              For Home
+            </Text>
+            <Text
+              fontWeight={"400"}
+              fontSize="17px"
+              color="var(--primary-btn-color)"
+            >
+              For Business
+            </Text>
+          </div>
+        </div>
+        <div>
+          <div>
+            <BsLaptop />
+          </div>
+          <div>Laptops</div>
+          <div style={{ textAlign: "center" }}>
+            <Text
+              fontWeight={"400"}
+              fontSize="17px"
+              color="var(--primary-btn-color)"
+            >
+              For Home
+            </Text>
+            <Text
+              fontWeight={"400"}
+              fontSize="17px"
+              color="var(--primary-btn-color)"
+            >
+              For Business
+            </Text>
+          </div>
+        </div>
+        <div>
+          <div>
+            <BsHeadphones />
+          </div>
+          <div>Accessories</div>
+          <div style={{ textAlign: "center" }}>
+            <Text
+              fontWeight={"400"}
+              fontSize="17px"
+              color="var(--primary-btn-color)"
+            >
+              For Home
+            </Text>
+            <Text
+              fontWeight={"400"}
+              fontSize="17px"
+              color="var(--primary-btn-color)"
+            >
+              For Business
+            </Text>
+          </div>
+        </div>
+        <div>
+          <div>
+            <RiAliensFill />
+          </div>
+          <div>Allienware</div>
+          <div style={{ textAlign: "center" }}>
+            <Text
+              fontWeight={"400"}
+              fontSize="17px"
+              color="var(--primary-btn-color)"
+            >
+              Desktops
+            </Text>
+            <Text
+              fontWeight={"400"}
+              fontSize="17px"
+              color="var(--primary-btn-color)"
+            >
+              Laptops
+            </Text>
+          </div>
+        </div>
+        <div>
+          <div>
+            <BsLaptop />
+          </div>
+          <div>Vostro</div>
+          <div style={{ textAlign: "center" }}>
+            <Text
+              fontWeight={"400"}
+              fontSize="17px"
+              color="var(--primary-btn-color)"
+            >
+              For Home
+            </Text>
+            <Text
+              fontWeight={"400"}
+              fontSize="17px"
+              color="var(--primary-btn-color)"
+            >
+              For Business
+            </Text>
+          </div>
+        </div>
+        <div>
+          <div>
+            <IoDesktopOutline />
+          </div>
+          <div>Mointor</div>
+          <div style={{ textAlign: "center" }}>
+            <Text
+              fontWeight={"400"}
+              fontSize="17px"
+              color="var(--primary-btn-color)"
+            >
+              For Home
+            </Text>
+            <Text
+              fontWeight={"400"}
+              fontSize="17px"
+              color="var(--primary-btn-color)"
+            >
+              For Business
+            </Text>
+          </div>
+        </div>
+      </div>
+
       <div className={styles.home_box}>
         <div>
           <Text color={"#444444"} fontSize="xl">
