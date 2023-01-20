@@ -26,20 +26,55 @@
   font-weight: 500;
   padding: 9px 15px;
 }
+.navbar_heading {
+  padding: 0;
+  width: 130px;
+}
 
 .navbar_items :hover {
   background-color: #e2e8f0;
 }
-.signup {
+.home_sign {
   background-color: #fff;
   width: 300px;
+  padding: 10px;
 }
-.signup:hover {
+.home_sign:hover {
   background-color: #fff;
 }
 .mobile_navbar {
   display: none;
 }
+
+.home_sign > :nth-child(4) {
+  border-radius: 0;
+  margin-top: 10px;
+  background-color: var(--primary-btn-color);
+  color: #fff;
+  width: 280px;
+}
+.home_sign > :nth-child(4):hover {
+  background-color: #fff;
+  color: var(--primary-btn-color);
+  border: 1px solid var(--primary-btn-color);
+}
+.home_sign > :nth-child(5),
+.home_sign > :nth-child(6),
+.home_sign > :nth-child(7) {
+  border-radius: 0;
+  width: 280px;
+  margin-top: 10px;
+  color: var(--primary-btn-color);
+  border: 1px solid var(--primary-btn-color);
+  background: #fff;
+}
+.home_sign > :nth-child(5):hover,
+.home_sign > :nth-child(6):hover,
+.home_sign > :nth-child(7):hover {
+  background-color: var(--secondary-btn-hover);
+  color: #fff;
+}
+
 @media all and (min-width: 728px) and (max-width: 1250px) {
   .navbar_heading2,
   .navbar_heading1 {

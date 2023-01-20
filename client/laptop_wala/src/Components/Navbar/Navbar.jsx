@@ -7,16 +7,25 @@ import {
   Input,
   InputGroup,
   InputRightElement,
+  ListIcon,
+  ListItem,
   Menu,
   MenuButton,
+  MenuGroup,
   MenuItem,
   MenuList,
   Text,
+  UnorderedList,
   useColorModeValue,
   useDisclosure,
 } from "@chakra-ui/react";
 import { AiOutlineUser, AiOutlineShoppingCart } from "react-icons/ai";
-import { MdOutlineSupportAgent, MdLanguage } from "react-icons/md";
+import {
+  MdOutlineSupportAgent,
+  MdLanguage,
+  MdCheckCircle,
+} from "react-icons/md";
+import { BsFillCircleFill } from "react-icons/bs";
 import { ChevronUpIcon, ChevronDownIcon, SearchIcon } from "@chakra-ui/icons";
 import { NavbarSec } from "./Navbar_Sec";
 
@@ -101,6 +110,7 @@ const about = [
 ];
 
 export const Navbar = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <div className={styles.navbar_container}>
       <div className={styles.navbar_sec_1}>
@@ -122,40 +132,78 @@ export const Navbar = () => {
           </InputGroup>
         </div>
         <div className={styles.navbar_items}>
-          <Menu>
+          <Menu isOpen={isOpen}>
             <MenuButton
-              as={Button}
-              rightIcon={<ChevronDownIcon />}
-              background="#fff"
-              borderRadius={"0"}
+              variant="ghost"
+              mx={1}
+              py={[1, 2, 2]}
+              px={4}
+              borderRadius={1}
+              _hover={{
+                bg: useColorModeValue("gray.100", "gray.700"),
+              }}
+              aria-label="Courses"
+              fontWeight="normal"
+              onMouseEnter={onOpen}
+              onMouseLeave={onClose}
             >
               <div className={styles.navbar_heading}>
                 <div>
                   <AiOutlineUser fontSize={"20px"} />
                 </div>
                 <div>Sign In</div>
+                {isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />}
               </div>
             </MenuButton>
-            <MenuList _hover={{ background: "#fff" }}>
-              <div className={styles.signup}>
-                <Text as={"b"} marginLeft="3" marginTop={"4"} fontSize="xl">
-                  Welcome to LaptopWala
-                </Text>
-                <Button
-                  marginLeft={"10px"}
-                  width={"280px"}
-                  background="var(--primary-btn-color)"
-                  color={"#fff"}
-                  borderRadius="0"
-                  _hover={{
-                    border: "1px solid var(--primary-btn-color)",
-                    color: "var(--primary-btn-color)",
-                    bg: "#fff",
-                  }}
+            <MenuList
+              onMouseEnter={onOpen}
+              onMouseLeave={onClose}
+              zIndex="100000000"
+              background={"#fff"}
+              _hover={{ background: "#fff" }}
+            >
+              <div className={styles.home_sign}>
+                <Text
+                  fontSize={"2xl"}
+                  fontWeight="400"
+                  _hover={{ background: "#fff" }}
                 >
-                  Sign In
-                </Button>
-                <Button>Create Account</Button>
+                  Welcome to Laptopwala
+                </Text>
+                <Text _hover={{ background: "#fff" }}>My Account</Text>
+                <UnorderedList _hover={{ background: "#fff" }}>
+                  <ListItem>
+                    <ListIcon
+                      as={BsFillCircleFill}
+                      color="#444444"
+                      fontSize={"10px"}
+                      marginBottom="4px"
+                    />
+                    Create and access products
+                  </ListItem>
+                  <ListItem>
+                    <ListIcon
+                      as={BsFillCircleFill}
+                      color="#444444"
+                      fontSize={"10px"}
+                      marginBottom="4px"
+                    />
+                    Place Order quickly
+                  </ListItem>
+                  <ListItem>
+                    <ListIcon
+                      as={BsFillCircleFill}
+                      color="#444444"
+                      fontSize={"10px"}
+                      marginBottom="4px"
+                    />
+                    View order and track easily
+                  </ListItem>
+                </UnorderedList>
+                <Button>Sign In</Button>
+                <Button>Create An Account</Button>
+                <Button>Premier Sign In</Button>
+                <Button>Partner Premier Sign In</Button>
               </div>
             </MenuList>
           </Menu>
