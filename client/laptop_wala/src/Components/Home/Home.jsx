@@ -3,6 +3,9 @@ import React from "react";
 import { Button, Text } from "@chakra-ui/react";
 import laptop1 from "../../assets/Screenshot_20230120_052234.png";
 import { BiSupport } from "react-icons/bi";
+import { BsPatchCheck } from "react-icons/bs";
+import { HiOutlineChatBubbleLeftRight } from "react-icons/hi2";
+import { FiSettings } from "react-icons/fi";
 export const Home = () => {
   return (
     <div className={styles.home_container}>
@@ -120,6 +123,91 @@ export const Home = () => {
           />
         </div>
       </div>
+      <div className={styles.home_support}>
+        <div>
+          <Text fontSize={"4xl"}>Dell Support</Text>
+          <Text fontSize={"xl"} fontWeight="400">
+            Get your questions answered
+          </Text>
+        </div>
+        <div>
+          <div>
+            <div>
+              <BiSupport fontSize={"30px"} color="var(--primary-btn-color)" />
+            </div>
+            <div>
+              <Text
+                color="var(--primary-btn-color)"
+                fontSize={"xl"}
+                fontWeight="500"
+              >
+                Contact Support
+              </Text>
+              <Text fontSize={"large"}>
+                Let us assist you with any product or service questions
+              </Text>
+            </div>
+          </div>
+          <hr />
+          <div>
+            <div>
+              <BsPatchCheck
+                fontSize={"30px"}
+                color="var(--primary-btn-color)"
+              />
+            </div>
+            <div>
+              <Text
+                color="var(--primary-btn-color)"
+                fontSize={"xl"}
+                fontWeight="500"
+              >
+                Warranty and Contracts
+              </Text>
+              <Text fontSize={"large"}>Check warranty of the products</Text>
+            </div>
+          </div>
+          <hr />
+          <div>
+            <div>
+              <HiOutlineChatBubbleLeftRight
+                fontSize={"30px"}
+                color="var(--primary-btn-color)"
+              />
+            </div>
+            <div>
+              <Text
+                color="var(--primary-btn-color)"
+                fontSize={"xl"}
+                fontWeight="500"
+              >
+                Product Support
+              </Text>
+              <Text fontSize={"large"}>
+                Expertise. Conveneince. Quality Support
+              </Text>
+            </div>
+          </div>
+          <hr />
+          <div>
+            <div>
+              <FiSettings fontSize={"30px"} color="var(--primary-btn-color)" />
+            </div>
+            <div>
+              <Text
+                color="var(--primary-btn-color)"
+                fontSize={"xl"}
+                fontWeight="500"
+              >
+                Drivers and Download
+              </Text>
+              <Text fontSize={"large"}>
+                Get the latest Drivers and Softwares
+              </Text>
+            </div>
+          </div>
+        </div>
+      </div>
       <div className={styles.home_box_1}>
         <div>
           <img
@@ -141,29 +229,44 @@ export const Home = () => {
           </div>
         </div>
       </div>
-      <div className={styles.home_support}>
+      <div className={styles.home_box_3}>
         <div>
-          <Text>Dell Support</Text>
-          <Text>Get your questions answered</Text>
+          <Text fontSize={"xl"}>REPUBLIC DAY OFFERS</Text>
+          <Text fontSize={"3xl"}>Set Your Creativity Free</Text>
+          <Text fontSize={"lg"} fontWeight="400" width={"80%"} margin="auto">
+            Celebrate Republic Day with 10% cashback on Citi cards or instant
+            discounts on UPI & headsets.
+          </Text>
+          <Text
+            color={"var(--primary-btn-color)"}
+            fontSize="lg"
+            fontWeight={"500"}
+          >
+            For Home
+          </Text>
+          <img
+            src="https://i.dell.com/is/image/DellContent/content/dam/ss2/page-specific/dell-homepage/apj/2-ups/republic-day-cons-dell-inspiron-5420nt-uhp-2304-12-in-homepage-2up-module-800x400.png?fmt=pjpg&pscan=auto&scl=1&wid=800&hei=400&qlt=100,0&resMode=sharp2&size=800,400&op_usm=1.75,0.3,2,0"
+            alt=""
+          />
         </div>
         <div>
-          <div>
-            <div>
-              <BiSupport fontSize={"30px"} color="var(--primary-btn-color)" />
-            </div>
-            <div>
-              <Text
-                color="var(--primary-btn-color)"
-                fontSize={"xl"}
-                fontWeight="500"
-              >
-                Contact Support
-              </Text>
-              <Text fontSize={"large"}>
-                Let us assist you with any product or service questions
-              </Text>
-            </div>
-          </div>
+          <Text fontSize={"xl"}>COMPUTER ELECTRONICS AND ACCESSORIES</Text>
+          <Text fontSize={"3xl"}>Overprepared For Everything</Text>
+          <Text fontSize={"lg"} fontWeight="400" width={"80%"} margin="auto">
+            Whether you're looking for a keyboard, mouse, docking station or
+            something else, we've got you covered.
+          </Text>
+          <Text
+            color={"var(--primary-btn-color)"}
+            fontSize="lg"
+            fontWeight={"500"}
+          >
+            Learn More
+          </Text>
+          <img
+            src="https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/page/banners/q4w1-con-warm-2updeal2-wl5022-km7321w-mh3021p-800x400.jpg?fmt=pjpg&pscan=auto&scl=1&wid=800&hei=400&qlt=100,0&resMode=sharp2&size=800,400&op_usm=1.75,0.3,2,0"
+            alt=""
+          />
         </div>
       </div>
     </div>

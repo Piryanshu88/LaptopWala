@@ -108,11 +108,25 @@
 .home_support > div {
   width: 50%;
 }
-.home_support > div:nth-child(2)>div {
+.home_support > div:nth-child(1) {
+  text-align: center;
+}
+.home_support > div:nth-child(2) > div {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  padding: 20px;
   align-items: flex-start;
   gap: 16px;
+}
+.home_box_3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.home_box_3 > div {
+  text-align: center;
+  width: 50%;
+  line-height: 2.5rem;
 }
 @media all and (min-width: 728px) and (max-width: 1250px) {
 }
@@ -144,5 +158,18 @@
   }
   .home_btn {
     display: inline-block;
+  }
+  .home_support {
+    flex-direction: column;
+  }
+  .home_support > div {
+    width: 100%;
+  }
+  .home_box_3 > div {
+    width: 100%;
+  }
+  .home_box_3 {
+    flex-direction: column;
+    gap: 30px;
   }
 }
