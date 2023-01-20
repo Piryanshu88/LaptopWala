@@ -1,0 +1,85 @@
+.signin_container {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.signin_container > div {
+  width: 50%;
+}
+.sign_form {
+  line-height: 5rem;
+  text-align: center;
+  width: 80%;
+  margin: auto;
+}
+.sign_btn {
+  border-radius: 0;
+  margin-top: 10px;
+  background-color: var(--primary-btn-color);
+  color: #fff;
+  width: 100%;
+}
+.sign_btn:hover {
+  background-color: #fff;
+  color: var(--primary-btn-color);
+  border: 1px solid var(--primary-btn-color);
+}
+.google_div {
+  border: 1px solid #e8e8e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  width: 80%;
+  gap: 10px;
+  margin: auto;
+  margin-bottom: 10px;
+}
+.acc_nen {
+  background-color: #f5f6f7;
+}
+.acc_nen > div {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  line-height: 2rem;
+}
+.acc_nen > div > div {
+  width: 30%;
+  text-align: center;
+  padding: 10px;
+  margin: auto;
+}
+.sign_btn1 {
+  border-radius: 0;
+  width: 100%;
+  margin-top: 10px;
+  color: var(--primary-btn-color);
+  border: 1px solid var(--primary-btn-color);
+  background: #fff;
+}
+.sign_btn1:hover {
+  background-color: var(--secondary-btn-hover);
+  color: #fff;
+}
+@media all and (min-width: 728px) and (max-width: 1250px) {
+  .acc_nen > div {
+    flex-direction: column;
+  }
+  .acc_nen > div > div {
+    width: 100%;
+  }
+}
+
+@media all and (min-width: 338px) and (max-width: 728px) {
+  .signin_container {
+    flex-direction: column;
+  }
+  .signin_container > div {
+    width: 100%;
+  }
+  .acc_nen > div {
+    display: none;
+  }
+}

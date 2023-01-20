@@ -49,7 +49,13 @@ export const SignIn = () => {
               Create or Reset password
             </span>{" "}
           </Text>
-          <Button className={styles.sign_btn}>Sign In</Button>
+          <Button
+            bg={'var("primary-btn-color")'}
+            borderRadius="0"
+            className={styles.sign_btn}
+          >
+            Sign In
+          </Button>
           <Text>
             Don't have a Dell Account?{" "}
             <span
@@ -60,7 +66,55 @@ export const SignIn = () => {
           </Text>
         </div>
       </div>
-      <div></div>
+      <div className={styles.acc_nen}>
+        <Text textAlign={"center"} fontSize="4xl" margin={"20px"}>
+          Dell Account Benefits
+        </Text>
+        <Text textAlign={"center"}>
+          My Account is an easy, more centralized way to manage your tech. Sign
+          Up Now!
+        </Text>
+        <div>
+          <div>
+            <img
+              style={{ margin: "auto" }}
+              src="https://i.dell.com/sites/csimages/App-Merchandizing_Images/all/icon-1-tracking-36x36.png"
+              alt=""
+            />
+
+            <Text fontWeight="500">Order Tracking</Text>
+            <Text>
+              Manage orders, track shipping status and view support history
+            </Text>
+          </div>
+          <div>
+            <img
+              style={{ margin: "auto" }}
+              src="https://i.dell.com/sites/csimages/App-Merchandizing_Images/all/icon-2-mail-36x36.png"
+              alt=""
+            />
+            <Text fontWeight="500">Manage Communications</Text>
+            <Text>Manage marketing and communications preferences</Text>
+          </div>
+          <div>
+            <img
+              style={{ margin: "auto" }}
+              src="https://i.dell.com/sites/csimages/App-Merchandizing_Images/all/icon-3-profile-36x36.png"
+              alt=""
+            />
+            <Text fontWeight="500">Profile Setting</Text>
+            <Text>
+              Save your favorite payment method and shipping details for quicker
+              checkout
+            </Text>
+          </div>
+        </div>
+        <img
+          src="https://i.dell.com/sites/csimages/Banner_Imagery/all/bannerimage460x460.png"
+          alt=""
+          style={{ margin: "auto" }}
+        />
+      </div>
     </div>
   );
 };
