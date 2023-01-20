@@ -9,6 +9,7 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import { FcGoogle } from "react-icons/fc";
+import { Link } from "react-router-dom";
 import styles from "./Signin.module.css";
 
 export const SignIn = () => {
@@ -61,7 +62,7 @@ export const SignIn = () => {
             <span
               style={{ color: "var(--primary-btn-color)", cursor: "pointer" }}
             >
-              Create an Account
+              <Link to="/login">Create an Account</Link>
             </span>{" "}
           </Text>
         </div>

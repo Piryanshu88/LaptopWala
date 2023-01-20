@@ -20,6 +20,14 @@ export const Login = () => {
         <Text textAlign={"center"} fontSize="4xl" margin={"20px"}>
           Create your Account
         </Text>
+        <Text marginBottom={'20px'} >
+          Already have a Dell Account?{" "}
+          <span
+            style={{ color: "var(--primary-btn-color)", cursor: "pointer" ,marginBottom:"0px"}}
+          >
+            <Link to="/signin">Sign In</Link>
+          </span>{" "}
+        </Text>
         <div className={styles.sign_form}>
           <InputGroup gap={"10px"}>
             <Input borderRadius={"0"} placeholder="First Name" />
