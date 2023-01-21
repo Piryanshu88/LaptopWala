@@ -145,7 +145,7 @@
 
   line-height: 2.5rem;
   position: relative;
-  height: 160px;
+  height: 120px;
   width: 160px;
   transform: translate(0px, 0px);
   overflow: hidden;
@@ -156,21 +156,27 @@
   font-size: 30px;
   margin: auto;
   display: flex;
-  transition: ease-in-out 1s;
+  transition: ease-in-out 400ms;
   justify-content: center;
+}
+.categories > div > div:nth-child(2) {
+  transition: ease-in-out 400ms;
+}
+.categories > div > div:nth-child(3) {
+  transition: ease-in-out 400ms;
 }
 .categories > div > div:nth-child(3) {
   transform: translate(0px, 50px);
 }
 .categories > div:hover > div:nth-child(1) {
-  transform: translate(0px, -60px);
+  transform: translate(0px, -56px);
 }
 .categories > div:hover > div:nth-child(2) {
-  transform: translate(0px, -20px);
+  transform: translate(0px, -56px);
   font-weight: 600;
 }
 .categories > div:hover > div:nth-child(3) {
-  transform: translate(0px, -20px);
+  transform: translate(0px, -56px);
 }
 .categories > div > div:nth-child(2) {
   display: flex;

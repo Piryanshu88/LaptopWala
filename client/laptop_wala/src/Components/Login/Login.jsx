@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Login.module.css";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
+import { useDispatch, useSelector } from "react-redux";
 import {
   Button,
   IconButton,
@@ -9,37 +10,102 @@ import {
   InputRightElement,
   Text,
 } from "@chakra-ui/react";
-import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
+import { SignUp, signUpReq } from "../../Redux/AuthReducer/action";
+import { useEffect } from "react";
 export const Login = () => {
   const [show, setShow] = React.useState(false);
   const handleClick = () => setShow(!show);
+  const dispatch = useDispatch();
+  const data = useSelector((store) => store.authReducer);
+  const [error, setError] = useState("");
+  const [signupFormVal, setSignupForm] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+  });
+  const handleSignUp = (e) => {
+    e.preventDefault();
+    dispatch(signUpReq());
+    if (
+      signupFormVal.name === "" ||
+      signupFormVal.email === "" ||
+      signupFormVal.mobile === "" ||
+      signupFormVal.password === ""
+    ) {
+      //console.log("hello");
+      setError("Please, fill all the Credentials!!");
+    } else {
+      SignUp(signupFormVal);
+    }
+  };
+  useEffect(() => {
+    console.log(data);
+  });
   return (
     <div className={styles.signin_container}>
       <div>
         <Text textAlign={"center"} fontSize="4xl" margin={"20px"}>
           Create your Account
         </Text>
-        <Text marginBottom={'20px'} >
+        <Text marginBottom={"20px"}>
           Already have a Dell Account?{" "}
           <span
-            style={{ color: "var(--primary-btn-color)", cursor: "pointer" ,marginBottom:"0px"}}
+            style={{
+              color: "var(--primary-btn-color)",
+              cursor: "pointer",
+              marginBottom: "0px",
+            }}
           >
             <Link to="/signin">Sign In</Link>
           </span>{" "}
         </Text>
         <div className={styles.sign_form}>
           <InputGroup gap={"10px"}>
-            <Input borderRadius={"0"} placeholder="First Name" />
-            <Input borderRadius={"0"} placeholder="Last Name" />
+            <Input
+              borderRadius={"0"}
+              placeholder="First Name"
+              onChange={(e) =>
+                setSignupForm((prev) => ({
+                  ...prev,
+                  firstName: e.target.value,
+                }))
+              }
+            />
+            <Input
+              borderRadius={"0"}
+              placeholder="Last Name"
+              onChange={(e) =>
+                setSignupForm((prev) => ({
+                  ...prev,
+                  lastName: e.target.value,
+                }))
+              }
+            />
           </InputGroup>
-          <Input placeholder="Email Address" borderRadius={"0"} />
+          <Input
+            placeholder="Email Address"
+            borderRadius={"0"}
+            onChange={(e) =>
+              setSignupForm((prev) => ({
+                ...prev,
+                email: e.target.value,
+              }))
+            }
+          />
           <InputGroup>
             <Input
               pr="4.5rem"
               type={show ? "text" : "password"}
               placeholder="Enter password"
               borderRadius={"0"}
+              onChange={(e) =>
+                setSignupForm((prev) => ({
+                  ...prev,
+                  password: e.target.value,
+                }))
+              }
             />
             <InputRightElement width="4.5rem">
               <IconButton
@@ -62,6 +128,7 @@ export const Login = () => {
             bg={'var("primary-btn-color")'}
             borderRadius="0"
             className={styles.sign_btn}
+            onClick={handleSignUp}
           >
             Create Account
           </Button>

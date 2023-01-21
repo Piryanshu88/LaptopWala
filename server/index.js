@@ -4,6 +4,11 @@ const { productRouter } = require("./controller/allproducts.controller");
 const { userRouter } = require("./controller/auth.controller");
 const { cartRouter } = require("./controller/cart.controller");
 const app = express();
+const cors = require("cors");
+
+cors({
+  origin: "*",
+});
 
 require("dotenv").config();
 app.use(express.json());
