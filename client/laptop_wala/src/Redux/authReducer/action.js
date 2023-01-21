@@ -5,10 +5,9 @@ const signUpReq = () => {
     type: types.SIGN_UP_REQ,
   };
 };
-const signUpSuccess = (pa) => {
+const signUpSuccess = () => {
   return {
     type: types.SIGN_UP_SUCCESS,
-    payload: pa,
   };
 };
 const signUpErr = () => {
@@ -49,16 +48,21 @@ const signOutErr = () => {
 };
 
 const SignUp = (signupdata) => (dispatch) => {
-  return axios
-    .post(`https://rose-shiny-hen.cyclic.app/user/register`, signupdata)
-    .then((re) => console.log(re))
-    .catch((err) => console.log(err));
+  console.log(signupdata);
+  return axios.post(
+    `https://rose-shiny-hen.cyclic.app/user/register`,
+    signupdata
+  );
+};
+const Login = (logindata) => (dispatch) => {
+  return axios.post(`https://rose-shiny-hen.cyclic.app/user/login`, logindata);
 };
 
 export {
   signUpErr,
   signUpReq,
   signUpSuccess,
+  Login,
   loginError,
   loginReq,
   loginSuccess,

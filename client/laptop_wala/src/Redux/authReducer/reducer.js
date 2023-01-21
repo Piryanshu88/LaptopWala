@@ -2,7 +2,7 @@ import { loadData, saveData } from "../../utils/accesslocalStorage";
 import * as types from "./actionTypes";
 const intialData = {
   isLoading: false,
-  isAuth: loadData("Auth") || false,
+  isAuth: loadData("dell_auth") || false,
   isSignup: false,
   user: loadData("dell_user") || "",
   isError: false,
@@ -35,8 +35,8 @@ export const reducer = (state = intialData, { type, payload }) => {
         isLoading: true,
       };
     case types.LOGIN_SUCCESS:
-      saveData("Auth", true);
-      saveData("user", payload);
+      saveData("dell_auth", true);
+      saveData("dell_user", payload);
       return {
         ...state,
         isAuth: true,
@@ -55,8 +55,8 @@ export const reducer = (state = intialData, { type, payload }) => {
         isLoading: true,
       };
     case types.SIGN_OUT_SUCCESS:
-      localStorage.removeItem("Auth");
-      localStorage.removeItem("user");
+      localStorage.removeItem("dell_auth");
+      localStorage.removeItem("dell_user");
       return {
         isLoading: false,
         isAuth: false,

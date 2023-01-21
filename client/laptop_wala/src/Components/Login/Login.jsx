@@ -9,11 +9,18 @@ import {
   InputGroup,
   InputRightElement,
   Text,
+  useToast,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import { SignUp, signUpReq } from "../../Redux/AuthReducer/action";
+import {
+  SignUp,
+  signUpErr,
+  signUpReq,
+  signUpSuccess,
+} from "../../Redux/AuthReducer/action";
 import { useEffect } from "react";
 export const Login = () => {
+  const toast = useToast();
   const [show, setShow] = React.useState(false);
   const handleClick = () => setShow(!show);
   const dispatch = useDispatch();
@@ -25,24 +32,52 @@ export const Login = () => {
     email: "",
     password: "",
   });
-  const handleSignUp = (e) => {
-    e.preventDefault();
+  const handleSignUp = () => {
     dispatch(signUpReq());
     if (
-      signupFormVal.name === "" ||
-      signupFormVal.email === "" ||
-      signupFormVal.mobile === "" ||
-      signupFormVal.password === ""
+      signupFormVal.firstName == "" ||
+      signupFormVal.email == "" ||
+      signupFormVal.lastName == "" ||
+      signupFormVal.password == ""
     ) {
-      //console.log("hello");
       setError("Please, fill all the Credentials!!");
+      toast({
+        title: error,
+        status: "error",
+        duration: 1000,
+        isClosable: true,
+      });
     } else {
-      SignUp(signupFormVal);
+      dispatch(SignUp(signupFormVal))
+        .then(
+          () => signUpSuccess(),
+          toast({
+            title: "Account created.",
+            description: "We've created your account for you.",
+            status: "success",
+            duration: 1000,
+            isClosable: true,
+          })
+        )
+        .catch((err) => {
+          return (
+            toast({
+              title: err.response.data.message,
+              status: "error",
+              duration: 1000,
+              isClosable: true,
+            }),
+            dispatch(signUpErr(err.response.data.message))
+          );
+        });
     }
+    setSignupForm({
+      firstName: "",
+      lastName: "",
+      email: "",
+      password: "",
+    });
   };
-  useEffect(() => {
-    console.log(data);
-  });
   return (
     <div className={styles.signin_container}>
       <div>
@@ -72,6 +107,7 @@ export const Login = () => {
                   firstName: e.target.value,
                 }))
               }
+              value={signupFormVal.firstName}
             />
             <Input
               borderRadius={"0"}
@@ -82,6 +118,7 @@ export const Login = () => {
                   lastName: e.target.value,
                 }))
               }
+              value={signupFormVal.lastName}
             />
           </InputGroup>
           <Input
@@ -93,9 +130,11 @@ export const Login = () => {
                 email: e.target.value,
               }))
             }
+            value={signupFormVal.email}
           />
           <InputGroup>
             <Input
+              value={signupFormVal.password}
               pr="4.5rem"
               type={show ? "text" : "password"}
               placeholder="Enter password"

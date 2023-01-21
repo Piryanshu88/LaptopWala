@@ -6,15 +6,74 @@ import {
   InputGroup,
   InputRightElement,
   Text,
+  useToast,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
-import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import {
+  Login,
+  loginError,
+  loginReq,
+  loginSuccess,
+} from "../../Redux/AuthReducer/action";
 import styles from "./Signin.module.css";
 
 export const SignIn = () => {
+  const toast = useToast();
   const [show, setShow] = React.useState(false);
+  const dispatch = useDispatch();
   const handleClick = () => setShow(!show);
+  const [error, setError] = useState("");
+  const [loginWithEmail, setLoginEmail] = useState({
+    email: "",
+    password: "",
+  });
+  const navigate = useNavigate();
+  const handleSignIn = () => {
+    dispatch(loginReq());
+    if (loginWithEmail.email == "" || loginWithEmail.password == "") {
+      setError("Please, fill all the Credentials!!");
+      toast({
+        title: error,
+        status: "error",
+        duration: 1000,
+        isClosable: true,
+      });
+    } else {
+      setError("");
+      dispatch(Login(loginWithEmail))
+        .then((re) => {
+          return (
+            dispatch(loginSuccess(re.data.user.firstName)),
+            toast({
+              title: "Login Successfully",
+              status: "success",
+              duration: 1000,
+              isClosable: true,
+            }),
+            navigate("/")
+          );
+        })
+        .catch((err) => {
+          return (
+            toast({
+              title: err.response.data.message,
+              status: "error",
+              duration: 1000,
+              isClosable: true,
+            }),
+            dispatch(loginError(err.response.data.message))
+          );
+        });
+    }
+    setLoginEmail({
+      email: "",
+      password: "",
+    });
+  };
+
   return (
     <div className={styles.signin_container}>
       <div>
@@ -26,13 +85,30 @@ export const SignIn = () => {
           Google Sign In
         </div>
         <div className={styles.sign_form}>
-          <Input placeholder="Email Address" borderRadius={"0"} />
+          <Input
+            placeholder="Email Address"
+            borderRadius={"0"}
+            value={loginWithEmail.email}
+            onChange={(e) =>
+              setLoginEmail((prev) => ({
+                ...prev,
+                email: e.target.value,
+              }))
+            }
+          />
           <InputGroup>
             <Input
               pr="4.5rem"
               type={show ? "text" : "password"}
               placeholder="Enter password"
               borderRadius={"0"}
+              value={loginWithEmail.password}
+              onChange={(e) =>
+                setLoginEmail((prev) => ({
+                  ...prev,
+                  password: e.target.value,
+                }))
+              }
             />
             <InputRightElement width="4.5rem">
               <IconButton
@@ -54,6 +130,7 @@ export const SignIn = () => {
             bg={'var("primary-btn-color")'}
             borderRadius="0"
             className={styles.sign_btn}
+            onClick={handleSignIn}
           >
             Sign In
           </Button>
