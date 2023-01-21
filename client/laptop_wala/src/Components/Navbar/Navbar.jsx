@@ -14,6 +14,7 @@ import {
   MenuGroup,
   MenuItem,
   MenuList,
+  Spinner,
   Text,
   UnorderedList,
   useColorModeValue,
@@ -121,11 +122,13 @@ export const Navbar = () => {
   const [searchVal, setSearchval] = useState("");
 
   const navigate = useNavigate();
+
   const handleSearch = () => {
     if (searchVal == "") {
       return;
     } else {
       console.log(searchVal);
+
       navigate(`/products/${searchVal}`);
       setSearchval("");
     }
@@ -140,6 +143,7 @@ export const Navbar = () => {
       isClosable: true,
     });
   };
+
   return (
     <div className={styles.navbar_container}>
       <div className={styles.navbar_sec_1}>
@@ -296,8 +300,13 @@ export const Navbar = () => {
       </div>
       <div className={styles.mobile_navbar}>
         <InputGroup>
-          <Input placeholder="Search here..." borderRadius={"0"} />
-          <InputRightElement children={<SearchIcon />} />
+          <Input
+            placeholder="Search here..."
+            borderRadius={"0"}
+            onChange={(e) => setSearchval(e.target.value)}
+            value={searchVal}
+          />
+          <InputRightElement children={<SearchIcon />} onClick={handleSearch} />
         </InputGroup>
       </div>
       <div className={styles.navbar_sec_2}>

@@ -7,3 +7,12 @@
 .sort_pro > div {
   width: 18%;
 }
+
+@media all and (min-width: 728px) and (max-width: 1250px) {
+}
+
+@media all and (min-width: 338px) and (max-width: 728px) {
+    .sort_pro > div {
+        width: 48%;
+      }
+}
