@@ -1,0 +1,140 @@
+{
+    "_id": {
+        "$oid": "63c6d6cd25bdceac7af30a1f"
+    },
+    "id": {
+        "$numberInt": "2881"
+    },
+    "name": "Msi Katana GF76 11UC-655NL",
+    "mpn": "9S7-17L212-655",
+    "info": "Intel Core i7 - i7-11800H - 8 cores - 17.3 inch - 16GB - 512GB SSD - Black - 9S7-17L212-655",
+    "data": {
+        "cpu": {
+            "type": "Intel Core i7",
+            "generation": "11e generatie",
+            "implementation": "i7-11800H",
+            "number_of_cores": {
+                "$numberInt": "8"
+            },
+            "clock_speed__ghz": {
+                "$numberDouble": "2.3"
+            },
+            "max_clock_speed__ghz": {
+                "$numberDouble": "4.6"
+            }
+        },
+        "audio": {
+            "has_speakers": true
+        },
+        "video": {
+            "has_internal_video_card": true,
+            "internal_video_card_type": "NVIDIA GeForce RTX 3050"
+        },
+        "camera": {},
+        "design": {
+            "color": "Black",
+            "material": "Plastic"
+        },
+        "memory": {
+            "type": "DDR4 (SODIMM)",
+            "ram__gb": {
+                "$numberInt": "16"
+            },
+            "max_ram__gb": {
+                "$numberInt": "64"
+            },
+            "number_of_slots": {
+                "$numberInt": "2"
+            },
+            "is_memory_expandable": true
+        },
+        "battery": {
+            "power__w": {
+                "$numberInt": "150"
+            },
+            "capacity__wh": {
+                "$numberInt": "53"
+            }
+        },
+        "display": {
+            "ratio": "16:09",
+            "size__inch": {
+                "$numberDouble": "17.3"
+            },
+            "technology": "IPS",
+            "refresh_rate__hz": {
+                "$numberInt": "60"
+            },
+            "resolution__pixels": "1920x1080"
+        },
+        "general": {
+            "ean": "4719072906900",
+            "mpn": "9S7-17L212-655",
+            "brand": "MSI"
+        },
+        "network": {
+            "bluetooth_version": {
+                "$numberDouble": "5.2"
+            }
+        },
+        "storage": {
+            "type": "SSD",
+            "capacity__gb": {
+                "$numberInt": "512"
+            },
+            "ssd_capacity__gb": {
+                "$numberInt": "512"
+            }
+        },
+        "keyboard": {
+            "type": "QWERTY",
+            "color_light": "Red Lighting",
+            "has_numeric_keyboard": true
+        },
+        "security": {},
+        "software": {
+            "os": "Windows 11 Home"
+        },
+        "measurements": {
+            "weight__g": {
+                "$numberInt": "2600"
+            },
+            "width__mm": {
+                "$numberInt": "398"
+            },
+            "height__mm": {
+                "$numberInt": "25"
+            },
+            "length__mm": {
+                "$numberInt": "273"
+            }
+        },
+        "ports_interfaces": {
+            "number_of_hdmi": {
+                "$numberInt": "1"
+            },
+            "has_thunderbolt": true,
+            "number_of_usb_a_gen_2": {
+                "$numberInt": "3"
+            },
+            "number_of_usb_c_gen_2": {
+                "$numberInt": "1"
+            }
+        }
+    },
+    "images": [
+        {
+            "url": "https://devices-api-prd.s3.eu-west-3.amazonaws.com/baeaa801abbf0e5f3101eec2a2616a74.jpg"
+        }
+    ],
+    "prices": [
+        {
+            "price": null,
+            "old_price": {
+                "$numberInt": "1199"
+            },
+            "currency": "EUR",
+            "url": "https://www.bol.com/be/nl/p/msi-katana-gf76-11uc-655nl-gaming-laptop-17-3-inch/9300000075189520/"
+        }
+    ]
+}

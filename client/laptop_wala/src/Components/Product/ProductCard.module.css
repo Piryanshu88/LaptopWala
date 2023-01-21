@@ -1,0 +1,34 @@
+.product_card {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  cursor: pointer;
+  padding: 13px;
+  border: 1px solid rgb(230, 230, 230);
+}
+.product_card > div {
+  width: 30%;
+}
+
+.hover_switch > img {
+  transition: all ease-in-out 400ms;
+}
+.hover_switch > img:hover {
+  transform: scale(1.05, 1.05);
+}
+.desc > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0px;
+}
+.cashback_div {
+  background-color: rgb(230, 230, 230);
+  display: inline-block;
+  padding: 0px 3px;
+  border-left: 3px solid red;
+}
+.product_price {
+  line-height: 2.4rem;
+}
