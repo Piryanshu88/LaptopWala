@@ -1,0 +1,12 @@
+.product_container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+}
+.product_container > div:nth-child(1) {
+  flex: 1;
+}
+.product_container > div:nth-child(2) {
+  flex: 4;
+}

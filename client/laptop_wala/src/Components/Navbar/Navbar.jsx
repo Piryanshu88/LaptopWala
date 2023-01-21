@@ -1,5 +1,5 @@
 import styles from "./Navbar.module.css";
-import React from "react";
+import React, { useState } from "react";
 import website_logo from "../../assets/wlogo1.png";
 import {
   Button,
@@ -29,7 +29,7 @@ import {
 import { BsFillCircleFill } from "react-icons/bs";
 import { ChevronUpIcon, ChevronDownIcon, SearchIcon } from "@chakra-ui/icons";
 import { NavbarSec } from "./Navbar_Sec";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { signOutReq, signOutSuccess } from "../../Redux/AuthReducer/action";
 
@@ -118,6 +118,18 @@ export const Navbar = () => {
   const { isAuth, user } = useSelector((store) => store.authReducer);
   const toast = useToast();
   const dispatch = useDispatch();
+  const [searchVal, setSearchval] = useState("");
+
+  const navigate = useNavigate();
+  const handleSearch = () => {
+    if (searchVal == "") {
+      return;
+    } else {
+      console.log(searchVal);
+      navigate(`/products/${searchVal}`);
+      setSearchval("");
+    }
+  };
   const signOut = () => {
     dispatch(signOutReq());
     dispatch(signOutSuccess());
@@ -146,8 +158,13 @@ export const Navbar = () => {
               placeholder="Search here..."
               borderRadius={"0"}
               width={{ sm: "", md: "300px", lg: "" }}
+              onChange={(e) => setSearchval(e.target.value)}
+              value={searchVal}
             />
-            <InputRightElement children={<SearchIcon />} />
+            <InputRightElement
+              children={<SearchIcon />}
+              onClick={handleSearch}
+            />
           </InputGroup>
         </div>
         <div className={styles.navbar_items}>

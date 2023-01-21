@@ -13,6 +13,7 @@
   --primary-btn-color: #0672cb;
   --primary-btn-hover: #fff;
   --secondary-btn-hover: #1c8eec;
+  --filter-tag: #00447c;
 }
 
 html {
@@ -25,4 +26,3 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
