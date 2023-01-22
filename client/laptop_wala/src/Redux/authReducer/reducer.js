@@ -8,9 +8,9 @@ const intialData = {
   isError: false,
   authtoken: "",
 };
-console.log(intialData);
+//console.log(intialData);
 export const reducer = (state = intialData, { type, payload }) => {
-  console.log(type, payload);
+ // console.log(type, payload);
   switch (type) {
     case types.SIGN_UP_REQ:
       return {
@@ -58,6 +58,7 @@ export const reducer = (state = intialData, { type, payload }) => {
     case types.SIGN_OUT_SUCCESS:
       localStorage.removeItem("dell_auth");
       localStorage.removeItem("dell_user");
+      localStorage.removeItem("cart_length");
       localStorage.removeItem("dell_email");
       return {
         isLoading: false,

@@ -2,8 +2,10 @@ import { Button, Image, Text, useToast } from "@chakra-ui/react";
 import axios from "axios";
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import { cartLength } from "../../Redux/cartReducer/action";
+import { loadData } from "../../utils/accesslocalStorage";
 import { Accordian } from "./Accordian";
 import styles from "./SingleProduct.module.css";
 const techcomp = [
@@ -53,6 +55,7 @@ export const SingleProducts = () => {
   const toast = useToast();
   const p = data[0]?.prices[0].price || 2000;
   const { isAuth } = useSelector((store) => store.authReducer);
+  const dispatch = useDispatch();
   const new_prices = p - p * 0.2;
   const { id } = useParams();
   const getData = () => {
@@ -60,6 +63,12 @@ export const SingleProducts = () => {
       .get(`https://rose-shiny-hen.cyclic.app/laptops/${id}`)
       .then((re) => setData(re.data))
       .catch((err) => console.log(err));
+  };
+  const addToCart = (d) => {
+    return axios
+      .post(`https://rose-shiny-hen.cyclic.app/cart`, d)
+      .then((re) => console.log(re))
+      .catch((err) => console.log(err.response.data.message));
   };
   const handleCart = () => {
     if (!isAuth) {
@@ -71,6 +80,14 @@ export const SingleProducts = () => {
         duration: 2000,
       });
     }
+    const cart = {
+      cartProducts: data[0],
+      user: {
+        name: loadData("dell_user"),
+        email: loadData("dell_email"),
+      },
+    };
+    addToCart(cart).then(() => dispatch(cartLength()));
     toast({
       title: `Added to Cart`,
       position: "bottom-left",

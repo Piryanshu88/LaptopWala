@@ -1,0 +1,16 @@
+.cart_container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 90%;
+  margin: auto;
+  padding: 10px;
+  gap: 10px;
+}
+.cart_container > div:nth-child(1) {
+  flex: 2;
+}
+.cart_container > div:nth-child(2) {
+  flex: 1;
+  border: 1px solid #e2e2e2;
+}

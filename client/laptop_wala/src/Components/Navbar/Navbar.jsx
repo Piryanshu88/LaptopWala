@@ -35,6 +35,10 @@ import { NavbarSec } from "./Navbar_Sec";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { signOutReq, signOutSuccess } from "../../Redux/AuthReducer/action";
+import axios from "axios";
+import { loadData, saveData } from "../../utils/accesslocalStorage";
+import { useEffect } from "react";
+import { cartLength } from "../../Redux/cartReducer/action";
 
 const apex = [
   "View All APEX",
@@ -122,7 +126,7 @@ export const Navbar = () => {
   const toast = useToast();
   const dispatch = useDispatch();
   const [searchVal, setSearchval] = useState("");
-
+  const cartData = useSelector((store) => store.cartReducer);
   const navigate = useNavigate();
 
   const handleSearch = () => {
@@ -146,6 +150,9 @@ export const Navbar = () => {
     });
   };
 
+  // useEffect(() => {
+  //   dispatch(cartLength());
+  // }, []);
   return (
     <div className={styles.navbar_container}>
       <div className={styles.navbar_sec_1}>
@@ -292,22 +299,24 @@ export const Navbar = () => {
             </div>
             <div>IN/EN</div>
           </div>
-          <div className={styles.navbar_heading3}>
-            <div style={{ position: "relative" }}>
-              <AiOutlineShoppingCart fontSize={"20px"} />
-              <Tag
-                size="sm"
-                colorScheme="blue"
-                borderRadius="full"
-                position={"absolute"}
-                top="-2"
-                left={"3"}
-              >
-                <TagLabel>1</TagLabel>
-              </Tag>
+          <Link to="/cart">
+            <div className={styles.navbar_heading3}>
+              <div style={{ position: "relative" }}>
+                <AiOutlineShoppingCart fontSize={"20px"} />
+                <Tag
+                  size="md"
+                  colorScheme="blue"
+                  borderRadius="full"
+                  position={"absolute"}
+                  top="-3"
+                  left={"2"}
+                >
+                  <TagLabel>{cartData.cartLength}</TagLabel>
+                </Tag>
+              </div>
+              <div>Cart</div>
             </div>
-            <div>Cart</div>
-          </div>
+          </Link>
         </div>
       </div>
       <div className={styles.mobile_navbar}>
