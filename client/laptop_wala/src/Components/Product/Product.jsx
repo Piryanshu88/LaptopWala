@@ -37,7 +37,7 @@ export const Product = () => {
       <div className={styles.products}>
         {products?.map((el, i) => {
           return !loading ? (
-            <Link to={`/singleproduct/${el.id}`}>
+            <Link to={`/singleproduct/${el._id}`}>
               <ProductCard {...el} key={i} />
             </Link>
           ) : (
