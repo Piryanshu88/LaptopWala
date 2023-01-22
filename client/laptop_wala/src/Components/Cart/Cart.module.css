@@ -12,5 +12,19 @@
 }
 .cart_container > div:nth-child(2) {
   flex: 1;
+  padding: 10px 15px;
   border: 1px solid #e2e2e2;
+}
+.checkout > div {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0px;
+}
+@media all and (min-width: 728px) and (max-width: 1250px) {
+}
+
+@media all and (min-width: 338px) and (max-width: 728px) {
+  .cart_container {
+    flex-direction: column-reverse;
+  }
 }
