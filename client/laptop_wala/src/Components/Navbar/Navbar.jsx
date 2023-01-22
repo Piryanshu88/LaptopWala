@@ -38,7 +38,7 @@ import { signOutReq, signOutSuccess } from "../../Redux/AuthReducer/action";
 import axios from "axios";
 import { loadData, saveData } from "../../utils/accesslocalStorage";
 import { useEffect } from "react";
-import { cartLength } from "../../Redux/cartReducer/action";
+import { cartLength, delDataSuccess } from "../../Redux/cartReducer/action";
 
 const apex = [
   "View All APEX",
@@ -139,6 +139,9 @@ export const Navbar = () => {
       setSearchval("");
     }
   };
+  const deleteData = (id) => {
+    return axios.delete(`https://rose-shiny-hen.cyclic.app/cart/${id}`);
+  };
   const signOut = () => {
     dispatch(signOutReq());
     dispatch(signOutSuccess());
@@ -148,6 +151,11 @@ export const Navbar = () => {
       duration: 500,
       isClosable: true,
     });
+    cartData?.carts?.map((el) => {
+      return deleteData(el._id);
+    });
+    dispatch(cartLength());
+    dispatch(delDataSuccess());
   };
 
   // useEffect(() => {

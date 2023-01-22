@@ -1,17 +1,22 @@
 import styles from "./Cart.module.css";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { cartLength } from "../../Redux/cartReducer/action";
+import { cartLength, delDataSuccess } from "../../Redux/cartReducer/action";
 import { CartCard } from "./CartCard";
 import {
+  Box,
   Button,
+  Flex,
   Heading,
   Image,
   Input,
+  Spinner,
   Text,
   useToast,
 } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import axios from "axios";
 
 export const Cart = () => {
   const dispatch = useDispatch();
@@ -20,11 +25,27 @@ export const Cart = () => {
     return sum + el.cartProducts.prices[0].price;
   }, 0);
   const toast = useToast();
+  const [loading, setloading] = useState(false);
+  const deleteData = (id) => {
+    return axios.delete(`https://rose-shiny-hen.cyclic.app/cart/${id}`);
+  };
+  const navigate = useNavigate();
   const handleCheckout = () => {
+    setloading(true);
+    setTimeout(() => {
+      setloading(false);
+      navigate("/");
+    }, 3000);
+
+    carts?.map((el) => {
+      return deleteData(el._id);
+    });
+    dispatch(cartLength());
+    dispatch(delDataSuccess());
+
     toast({
       title: `Checkout Successfull, Have a great day`,
       status: "success",
-      duration: 1000,
       isClosable: true,
     });
   };
@@ -53,6 +74,19 @@ export const Cart = () => {
           margin="auto"
         />
       </div>
+    );
+  }
+  if (loading) {
+    return (
+      <Flex alignItems={"center"} justifyContent="center" height={"100vh"}>
+        <Spinner
+          thickness="4px"
+          speed="0.65s"
+          emptyColor="gray.200"
+          color="blue.500"
+          size="xl"
+        />
+      </Flex>
     );
   }
   return (

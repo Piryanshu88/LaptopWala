@@ -18,6 +18,21 @@ const getDataError = () => {
     type: types.GET_CART_ERROR,
   };
 };
+const delDataReq = () => {
+  return {
+    type: types.DEL_CART_REQ,
+  };
+};
+const delDataSuccess = () => {
+  return {
+    type: types.DEL_CART_SUCCESS,
+  };
+};
+const delDataErr = () => {
+  return {
+    type: types.DEL_CART_ERROR,
+  };
+};
 const cartLength = () => (dispatch) => {
   dispatch(getDataReq());
   return axios
@@ -30,4 +45,12 @@ const cartLength = () => (dispatch) => {
     })
     .catch((err) => dispatch(getDataError()));
 };
-export { getDataError, getDataReq, getDataSuccess, cartLength };
+export {
+  getDataError,
+  getDataReq,
+  getDataSuccess,
+  cartLength,
+  delDataErr,
+  delDataReq,
+  delDataSuccess,
+};
