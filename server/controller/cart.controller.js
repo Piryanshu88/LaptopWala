@@ -8,7 +8,7 @@ app.use(express.json());
 cartRouter.get("/", async (req, res) => {
   try {
     const cartItems = await CartModel.find({
-      user: { email: localStorage.getItem("user_email") },
+      user: { email: localStorage.getItem("dell_email") },
     });
     res.status(201).json({ cartItems, status: "success" });
   } catch (error) {

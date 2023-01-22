@@ -46,7 +46,7 @@ export const SignIn = () => {
       dispatch(Login(loginWithEmail))
         .then((re) => {
           return (
-            dispatch(loginSuccess(re.data.user.firstName)),
+            dispatch(loginSuccess(re.data.user)),
             toast({
               title: "Login Successfully",
               status: "success",

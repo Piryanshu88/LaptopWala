@@ -15,6 +15,8 @@ import {
   MenuItem,
   MenuList,
   Spinner,
+  Tag,
+  TagLabel,
   Text,
   UnorderedList,
   useColorModeValue,
@@ -291,8 +293,18 @@ export const Navbar = () => {
             <div>IN/EN</div>
           </div>
           <div className={styles.navbar_heading3}>
-            <div>
+            <div style={{ position: "relative" }}>
               <AiOutlineShoppingCart fontSize={"20px"} />
+              <Tag
+                size="sm"
+                colorScheme="blue"
+                borderRadius="full"
+                position={"absolute"}
+                top="-2"
+                left={"3"}
+              >
+                <TagLabel>1</TagLabel>
+              </Tag>
             </div>
             <div>Cart</div>
           </div>

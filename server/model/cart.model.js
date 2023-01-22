@@ -5,22 +5,14 @@ const reqObj = { type: Object, required: true };
 const reqArray = { type: Array, required: true };
 const reqNumber = { type: Number, required: true };
 const cartSchema = mongoose.Schema({
-  orderSummary: {
-    subTotal: reqNumber,
-    quantity: reqNumber,
-    discount: reqNumber,
-    total: reqNumber,
+  cartProducts: {
+    name: reqString,
+    mpn: reqString,
+    info: reqString,
+    data: reqObj,
+    images: reqArray,
+    prices: reqArray,
   },
-  cartProducts: [
-    {
-      name: reqString,
-      mpn: reqString,
-      info: reqString,
-      data: reqObj,
-      images: reqArray,
-      prices: reqArray,
-    },
-  ],
   user: {
     name: reqString,
     email: reqString,

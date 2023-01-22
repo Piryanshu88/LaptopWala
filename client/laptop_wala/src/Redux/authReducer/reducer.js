@@ -36,11 +36,12 @@ export const reducer = (state = intialData, { type, payload }) => {
       };
     case types.LOGIN_SUCCESS:
       saveData("dell_auth", true);
-      saveData("dell_user", payload);
+      saveData("dell_user", payload.firstName);
+      saveData("dell_email", payload.email);
       return {
         ...state,
         isAuth: true,
-        user: payload,
+        user: payload.firstName,
         isLoading: false,
       };
     case types.LOGIN_ERROR:
@@ -57,6 +58,7 @@ export const reducer = (state = intialData, { type, payload }) => {
     case types.SIGN_OUT_SUCCESS:
       localStorage.removeItem("dell_auth");
       localStorage.removeItem("dell_user");
+      localStorage.removeItem("dell_email");
       return {
         isLoading: false,
         isAuth: false,
