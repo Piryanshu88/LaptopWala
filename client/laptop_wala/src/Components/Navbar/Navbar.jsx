@@ -1,6 +1,6 @@
 import styles from "./Navbar.module.css";
 import React, { useState } from "react";
-import website_logo from "../../assets/wlogo1.png";
+import website_logo from "../../assets/LaptopWala.png";
 import {
   Button,
   Image,
@@ -24,11 +24,7 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import { AiOutlineUser, AiOutlineShoppingCart } from "react-icons/ai";
-import {
-  MdOutlineSupportAgent,
-  MdLanguage,
-  MdCheckCircle,
-} from "react-icons/md";
+import { MdOutlineSupportAgent, MdLanguage } from "react-icons/md";
 import { BsFillCircleFill } from "react-icons/bs";
 import { ChevronUpIcon, ChevronDownIcon, SearchIcon } from "@chakra-ui/icons";
 import { NavbarSec } from "./Navbar_Sec";
@@ -36,8 +32,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { signOutReq, signOutSuccess } from "../../Redux/AuthReducer/action";
 import axios from "axios";
-import { loadData, saveData } from "../../utils/accesslocalStorage";
-import { useEffect } from "react";
+
 import { cartLength, delDataSuccess } from "../../Redux/cartReducer/action";
 
 const apex = [

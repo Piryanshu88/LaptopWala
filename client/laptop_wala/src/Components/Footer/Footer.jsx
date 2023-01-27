@@ -10,8 +10,10 @@ import {
   Flex,
   Tag,
   useColorModeValue,
+  Image,
 } from "@chakra-ui/react";
 import { SiDell } from "react-icons/si";
+import Img from "../../assets/download1.png";
 export const Footer = () => {
   return (
     <div>
@@ -91,7 +93,8 @@ export const Footer = () => {
               ml: 8,
             }}
           >
-            <SiDell color="var(--primary-btn-color)" fontSize={"40px"} />
+            {/* <SiDell color="var(--primary-btn-color)" fontSize={"40px"} /> */}
+            <Image src={Img} width="5%" />
           </Flex>
           <div>
             <img

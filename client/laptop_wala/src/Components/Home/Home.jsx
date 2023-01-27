@@ -4,8 +4,9 @@ import { Button, Text } from "@chakra-ui/react";
 import laptop1 from "../../assets/Screenshot_20230120_052234.png";
 import { BiSupport } from "react-icons/bi";
 import { BsPatchCheck, BsLaptop, BsHeadphones } from "react-icons/bs";
+
 import { HiOutlineChatBubbleLeftRight } from "react-icons/hi2";
-import { FiSettings } from "react-icons/fi";
+import { FiSettings, FiSmartphone } from "react-icons/fi";
 import { AiOutlineDesktop } from "react-icons/ai";
 import { RiAliensFill } from "react-icons/ri";
 import { IoDesktopOutline } from "react-icons/io5";
@@ -104,9 +105,9 @@ export const Home = () => {
         </div>
         <div>
           <div>
-            <BsLaptop />
+            <FiSmartphone />
           </div>
-          <div>Vostro</div>
+          <div>Smartphones</div>
           <div style={{ textAlign: "center" }}>
             <Text
               fontWeight={"400"}
