@@ -14,6 +14,7 @@ import {
 } from "@chakra-ui/react";
 import { SiDell } from "react-icons/si";
 import Img from "../../assets/download1.png";
+//C:\Users\Piryanshu\Desktop\DELL WEBSITE\superficial-board-6852\client\laptop_wala\src\assets\
 export const Footer = () => {
   return (
     <div>
