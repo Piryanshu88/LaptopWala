@@ -49,6 +49,7 @@ export const Cart = () => {
       isClosable: true,
     });
   };
+  
   useEffect(() => {
     dispatch(cartLength());
   }, []);
