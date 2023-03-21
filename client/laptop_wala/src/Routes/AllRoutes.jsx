@@ -10,12 +10,14 @@ import { SingleProduct } from "../Pages/SingleProduct/SingleProduct";
 export const AllRoutes = () => {
   return (
     <Routes>
+      
       <Route path="/" element={<Homes />} />
       <Route path="/products/:name" element={<Product />} />
       <Route path="/singleproduct/:id" element={<SingleProduct />} />
       <Route path="/signin" element={<SignIn />} />
       <Route path="/login" element={<Login />} />
       <Route path="/cart" element={<WebCart />} />
+      
     </Routes>
   );
 };
