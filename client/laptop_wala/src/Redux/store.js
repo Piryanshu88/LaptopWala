@@ -5,6 +5,7 @@ import {
   compose,
 } from "redux";
 import thunk from "redux-thunk";
+
 import { reducer as authReducer } from "./AuthReducer/reducer";
 import { reducer as dataReducer } from "./dataReducer/reducer";
 import { reducer as cartReducer } from "./cartReducer/reducer";
