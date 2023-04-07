@@ -40,7 +40,7 @@
   <br />&#10023;
   <a href="https://github.com/Piryanshu88/LaptopWala/issues">Report Bug</a> &#10023;
 
-## Features
+## 🚀 Features
 
 - Transitioning accordions in various positions for various
   purposes.
@@ -52,7 +52,7 @@
 - add product to cart
 - cart for multiple users
 
-## Snapshots of the project
+## 💻 Snapshots of the project
 
 Landing page and navigation bar
 
